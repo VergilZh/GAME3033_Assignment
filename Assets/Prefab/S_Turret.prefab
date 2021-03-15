@@ -79,7 +79,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8016243970874097026, guid: dfa5c11c5cebec14da0b040d67006075, type: 3}
   bulletSpawn: {fileID: 6546588724155142252}
   spawnTime: 1
-  spawnDelay: 5
+  spawnDelay: 2
 --- !u!1 &7436425681770900806
 GameObject:
   m_ObjectHideFlags: 0
