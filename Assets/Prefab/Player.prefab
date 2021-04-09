@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2243221910681852123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.206, y: 1.22, z: -10.87}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1365138039954273156}
@@ -156,8 +156,23 @@ MonoBehaviour:
   turretPrefab: {fileID: 0}
   bulletSpawn: {fileID: 5601695038119160500}
   turretSpawn: {fileID: 0}
+  playerBag: {fileID: 0}
+  healthBar: {fileID: 0}
+  GunAnim: {fileID: 0}
+  currentAmmoText: {fileID: 0}
+  totalAmmoText: {fileID: 0}
+  ironBarText: {fileID: 0}
+  copperBarText: {fileID: 0}
+  score: {fileID: 0}
+  MaxHealth: 100
+  currentAmmo: 6
+  totalAmmo: 60
+  ironBar: 0
+  copperBar: 0
   speed: 12
   gravity: -1
+  playerScore: 0
+  isBagOpen: 0
 --- !u!1 &2243221911422110665
 GameObject:
   m_ObjectHideFlags: 0

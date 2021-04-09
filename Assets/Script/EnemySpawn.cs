@@ -26,7 +26,6 @@ public class EnemySpawn : MonoBehaviour
         { 
             Instantiate(enemyPrefab, transform.position, transform.rotation);
             enemyNum++;
-            Debug.Log(enemyNum);
         }
     }
 }
