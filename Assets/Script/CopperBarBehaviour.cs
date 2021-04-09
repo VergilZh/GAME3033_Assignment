@@ -7,7 +7,7 @@ public class CopperBarBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class CopperBarBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<PlayerBehaviour>().copperBar += 1;
+            FindObjectOfType<PlayerBehaviour>().pickUp.Play();
         }
     }
 }

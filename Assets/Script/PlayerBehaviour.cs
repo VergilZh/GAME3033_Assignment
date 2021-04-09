@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Audio")]
     public AudioSource openFire;
     public AudioSource reload;
+    public AudioSource pickUp;
 
     [Header("UI Text")]
     public Text currentAmmoText;
@@ -24,6 +26,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Text ironBarText;
     public Text copperBarText;
     public Text score;
+    
 
     [Header("Player Massage")]
     public float MaxHealth = 100;
@@ -36,6 +39,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float playerScore;
     public bool isBagOpen;
 
+
     Vector3 velocity;
 
     // Start is called before the first frame update
@@ -43,6 +47,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         healthBar.value = MaxHealth;
         playerBag.SetActive(false);
+        
         isBagOpen = false;
     }
 
@@ -64,10 +69,13 @@ public class PlayerBehaviour : MonoBehaviour
         totalAmmoText.text = totalAmmo.ToString();
         ironBarText.text = ironBar.ToString();
         copperBarText.text = copperBar.ToString();
-
-        
-
         score.text = playerScore.ToString();
+
+        if (MaxHealth <= 0)
+        {
+            SceneManager.LoadScene("GameOverScene");
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     public void PlayerDamage(int damage)
@@ -100,7 +108,7 @@ public class PlayerBehaviour : MonoBehaviour
         turret.transform.position = turretSpawn.position;
     }
 
-    void PlayerMovement()
+    public void PlayerMovement()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -141,6 +149,8 @@ public class PlayerBehaviour : MonoBehaviour
                 isBagOpen = false;
             }
         }
+
+        
     }
 
     void ChangeAmmoClips()

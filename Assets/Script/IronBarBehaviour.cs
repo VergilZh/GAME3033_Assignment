@@ -22,6 +22,7 @@ public class IronBarBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<PlayerBehaviour>().ironBar += 1;
+            FindObjectOfType<PlayerBehaviour>().pickUp.Play();
         }
     }
 }

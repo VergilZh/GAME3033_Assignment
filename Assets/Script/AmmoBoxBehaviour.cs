@@ -23,6 +23,7 @@ public class AmmoBoxBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<PlayerBehaviour>().totalAmmo += AmmoNumber;
+            FindObjectOfType<PlayerBehaviour>().pickUp.Play();
         }
     }
 }
