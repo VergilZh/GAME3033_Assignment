@@ -32,6 +32,10 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             other.GetComponent<EnemyBehaviour>().EnemyDamage(50);
         }
+        if (other.tag == "EditorOnly")
+        { 
+        
+        }
         else
         {
             Destroy(gameObject);

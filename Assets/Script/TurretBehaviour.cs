@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretBehaviour : MonoBehaviour
 {
-    private Transform target;
+    public Transform target;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float spawnTime;
@@ -12,8 +12,8 @@ public class TurretBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
         InvokeRepeating("TurretFire", spawnTime, spawnDelay);
+        //target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
     }
 
     // Update is called once per frame
